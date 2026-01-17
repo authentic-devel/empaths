@@ -352,5 +352,7 @@ empaths.Resolve(".名前", user, nil)  // May work but not guaranteed
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
+## AI Disclaimer
 
+This project was written manually by me, but AI was used to help with improvements and documentation.  
 
