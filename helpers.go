@@ -137,12 +137,14 @@ func extractValue(value reflect.Value) any {
 		return nil
 	}
 
-	// Handle nil pointers, slices, maps, and interfaces
+	// Handle nil pointers, slices, maps, channels, funcs, and interfaces
 	switch value.Kind() {
-	case reflect.Ptr, reflect.Slice, reflect.Map, reflect.Interface:
+	case reflect.Ptr, reflect.Slice, reflect.Map, reflect.Interface, reflect.Chan, reflect.Func, reflect.UnsafePointer:
 		if value.IsNil() {
 			return nil
 		}
+	default:
+		// Other kinds (Int, String, Struct, etc.) cannot be nil
 	}
 
 	// Dereference pointers to get their actual value
